@@ -12,7 +12,7 @@ struct bpf_map_def SEC("maps") kprobe_map = {
     .max_entries = 1,
 };
 
-SEC("kprobe/sys_execve")
+SEC("kprobe/__x64_sys_unlinkat")
 int kprobe_execve() {
     __u32 key = 0;
     __u64 initval = 1;
