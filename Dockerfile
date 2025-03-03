@@ -12,6 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 #    bcc-tools libbcc-examples linux-headers-$(uname -r) \
 #    clang llvm libelf-dev gcc iproute2 git cmake make iputils-ping \
 #    curl
+#
 
 # Install Golang
 RUN apt update && apt install -y \
@@ -44,6 +45,8 @@ RUN mkdir /usr/src/kubefim_program
 COPY kprobe.c /usr/src/kubefim_program
 COPY main.go /usr/src/kubefim_program
 COPY gen.go /usr/src/kubefim_program
+
+
 
 # Set the working directory
 WORKDIR /usr/src/kubefim_program

@@ -5,14 +5,17 @@ metadata:
   namespace: kubefim-ns
   labels:
     app: ebpf
+    project: kubefim
 spec:
   selector:
     matchLabels:
       app: ebpf
+      project: kubefim
   template:
     metadata:
       labels:
         app: ebpf
+        project: kubefim
     spec:
       serviceAccountName: ebpf-service-account
       # Required security context for privileged access
